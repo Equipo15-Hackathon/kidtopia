@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\Category;
+use App\Models\Brand;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::all();
-        return response()->json($categories, 200);
+        $brands = Brand::all();
+        return response()->json($brands, 200);
     }
 
     /**
@@ -34,13 +34,13 @@ class CategoryController extends Controller
             'name' => 'required|string'
         ]);
 
-        $categories = Category::create([
+        $brands = Brand::create([
             'name' => $validated['name']
         ]);
 
-        $categories->save();
+        $brands->save();
 
-        return response()->json($categories, 201);
+        return response()->json($brands, 201);
     }
 
     /**
@@ -48,13 +48,13 @@ class CategoryController extends Controller
      */
     public function show(string $id)
     {
-        $categories = Category::find($id);
+        $brands = Brand::find($id);
 
-        if (!$categories) {
-            return response()->json(['message' => 'Category not found'], 404);
+        if (!$brands) {
+            return response()->json(['message' => 'Brand not found'], 404);
         }
 
-        return response()->json($categories, 200);
+        return response()->json($brands, 200);
     }
 
     /**
@@ -70,23 +70,23 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $categories = Category::find($id);
+        $brands = Brand::find($id);
 
-        if (!$categories) {
-            return response()->json(['message' => 'Category not found'], 404);
+        if (!$brands) {
+            return response()->json(['message' => 'Brand not found'], 404);
         }
 
         $validated = $request->validate([
             'name' => 'required|string'
         ]);
 
-        $categories->update([
+        $brands->update([
             'name' => $validated['name']
         ]);
 
-        $categories->save();
+        $brands->save();
 
-        return response()->json($categories, 200);
+        return response()->json($brands, 200);
     }
 
     /**
@@ -94,13 +94,13 @@ class CategoryController extends Controller
      */
     public function destroy(string $id)
     {
-        $categories = Category::find($id);
+        $brands = Brand::find($id);
 
-        if (!$categories) {
-            return response()->json(['message' => 'Category not found'], 404);
+        if (!$brands) {
+            return response()->json(['message' => 'Brand not found'], 404);
         }
 
-        $categories->delete();
+        $brands->delete();
 
         return response()->json([], 204);
     }
