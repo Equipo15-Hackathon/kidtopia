@@ -17,7 +17,7 @@ Este proyecto está desarrollado con **Laravel 12** y utiliza las siguientes tec
 - **Laravel Sail** (Entorno de desarrollo con Docker)
 - **Laravel Pint** (Formateo de código)
 - **PHPUnit** (Pruebas unitarias)
-- **FakerPHP** (Generación de datos de prueba)
+
 
 ## 🛠 Instalación y Configuración
 
@@ -27,28 +27,24 @@ Sigue estos pasos para configurar y ejecutar **Kidtopia** en tu entorno local:
 ```bash
  git clone https://github.com/Equipo15-Hackathon/kidtopia.git
  cd kidtopia
- cd kidtopia
 ```
 
 ### 2️⃣ Instalar Dependencias
 ```bash
 composer install
+```
+
+```bash
 npm install
 ```
 
-### 3️⃣ Configurar Variables de Entorno
-Copia el archivo `.env.example` y renómbralo como `.env`:
-```bash
-cp .env.example .env
-```
-
-### 4️⃣ Configurar Base de Datos
+###  3️⃣Configurar Base de Datos
 Si estás usando MySQL, edita el archivo `.env` con tus credenciales y ejecuta:
 ```bash
 php artisan migrate --seed
 ```
 
-### 5️⃣ Levantar el Servidor
+### 4️⃣ Levantar el Servidor
 Ejecuta el siguiente comando para iniciar el servidor de desarrollo:
 ```bash
 php artisan serve
@@ -59,13 +55,21 @@ composer run dev
 ```
 
 ## 🧪 Pruebas
-Para ejecutar las pruebas, usa:
+Para ejecutar las pruebas unitarias, usa:
 ```bash
 php artisan test
 ```
 
-Podrás ver la documentación de esta API en el siguiente enlace 
+Para ejecutar las pruebas de cobertura, usa:
+```bash
+php artisan test --coverage-html=coverage-report
+```
 
+## 🎨 Enlace al Frontend
+Puedes acceder al repositorio del frontend en el siguiente enlace:
+[Repositorio Frontend de Kidtopia](https://github.com/Equipo15-Hackathon/fronted-Kidtopia.git)
+
+Podrás ver la documentación de esta API en el siguiente enlace 
 [Documentación Postman](https://documenter.getpostman.com/view/40986713/2sAYkErfdU)
 
 
