@@ -35,8 +35,8 @@ class ProductController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|string',
-            'description' => 'required|text',
-            'price' => 'required|decimal|min:0',
+            'description' => 'required|string',
+            'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
             'image' => 'url',
             'category_id' => 'required|integer|min:0',
@@ -60,7 +60,7 @@ class ProductController extends Controller
             return response()->json(['message' => 'The product brand id does not exists'], 404);
         }
 
-        $ageRangeId = (int)$validated['ageRange_id'];
+        $ageRangeId = (int)$validated['age_range_id'];
 
         $ageRange = AgeRange::find($ageRangeId);
 
@@ -120,8 +120,8 @@ class ProductController extends Controller
 
         $validated = $request->validate([
             'name' => 'string',
-            'description' => 'text',
-            'price' => 'decimal|min:0',
+            'description' => 'string',
+            'price' => 'numeric|min:0',
             'stock' => 'integer|min:0',
             'image' => 'url',
             'category_id' => 'integer|min:0',
@@ -145,7 +145,7 @@ class ProductController extends Controller
             return response()->json(['message' => 'The product brand id does not exists'], 404);
         }
 
-        $ageRangeId = (int)($validated['ageRange_id'] ?? $products->age_range_id);
+        $ageRangeId = (int)($validated['age_range_id'] ?? $products->age_range_id);
 
         $ageRange = AgeRange::find($ageRangeId);
 
