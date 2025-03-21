@@ -190,11 +190,6 @@ La URL base para acceder a los endpoints es: `http://127.0.0.1:8000/api`.
 
 ## Diagrama de la Base de Datos
 
-_Aquí puedes subir la foto del diagrama de la base de datos._  
-**Instrucciones:**  
-- Coloca la imagen en el directorio del proyecto (por ejemplo, en una carpeta `assets`).  
-- Actualiza la ruta de la imagen a continuación.
-
 ![Diagrama de la Base de Datos](https://res.cloudinary.com/del1j3jge/image/upload/v1742543107/Captura_de_pantalla_2025-03-21_084005_epgiyt.png)
 
 ---
